@@ -10,15 +10,17 @@ function Posts() {
   );
   const addLike = (index) => {
     const newCount = likeCount[index] + 1;
-    likeCount.splice(index, 1, newCount);
-    setLikeCount([...likeCount]);
+    const newArr = [...likeCount];
+    newArr.splice(index, 1, newCount);
+    setLikeCount([...newArr]);
   };
 
   const disLike = (index) => {
     if (likeCount[index] > 0) {
       const newCount = likeCount[index] - 1;
-      likeCount.splice(index, 1, newCount);
-      setLikeCount([...likeCount]);
+      const newArr = [...likeCount];
+      newArr.splice(index, 1, newCount);
+      setLikeCount([...newArr]);
     }
   };
   return (
